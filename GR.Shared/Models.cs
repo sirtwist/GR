@@ -60,7 +60,7 @@ namespace GR.Shared
             Person person = new Person();
             if (input.Count() != 5)
             {
-                throw new FormatException("input array does not contain the required amount (5) of elements");
+                throw new ArgumentException("input array does not contain the required amount (5) of elements");
             }
             for (var i = 0; i < input.Count(); i++)
             {
