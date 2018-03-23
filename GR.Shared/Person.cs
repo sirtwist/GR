@@ -25,6 +25,10 @@ namespace GR.Shared
                    DateOfBirth == test.DateOfBirth;
         }
 
+        /// <summary>
+        /// Converts Person object to a comma-separated string
+        /// </summary>
+        /// <returns>Comma-separated string</returns>
         public override string ToString()
         {
             return String.Format("{0},{1},{2},{3},{4}", this.LastName, this.FirstName, this.Gender.ToString(), this.FavoriteColor, this.DateOfBirth.ToString("M/d/yyyy"));

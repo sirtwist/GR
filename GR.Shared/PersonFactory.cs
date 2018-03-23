@@ -8,6 +8,11 @@ namespace GR.Shared
 {
     public class PersonFactory : RecordFactory
     {
+        /// <summary>
+        /// Parses the specified input string and returns a new Person object if the input is in the correct format
+        /// </summary>
+        /// <param name="input">Delimited string containing 5 elements (Lastname, Firstname, Gender, FavoriteColor, Birthdate)</param>
+        /// <returns>Person object</returns>
         public override Record GetRecord(string[] input)
         {
             Person person = new Person();

@@ -206,11 +206,11 @@ namespace GR.Tests
         public void Output_TestTypeCorrect()
         {
             int input = 2;
-            OutputType expected = OutputType.Birthdate;
+            SortOrder expected = SortOrder.Birthdate;
 
-            var actual = Output.GetOutputType(input);
+            var actual = Output.ToSortOrder(input);
 
-            Assert.AreEqual<OutputType>(expected, actual);
+            Assert.AreEqual<SortOrder>(expected, actual);
         }
 
         [TestMethod]
@@ -218,7 +218,7 @@ namespace GR.Tests
         {
             int input = 4;
 
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => Output.GetOutputType(input));
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => Output.ToSortOrder(input));
         }
 
         [TestMethod]
@@ -232,7 +232,7 @@ namespace GR.Tests
             records.Add(new Person() { LastName = "Johnson", FirstName = "Nancy", DateOfBirth = new DateTime(1982, 7, 26), FavoriteColor = "Red", Gender = Gender.Female });
             records.Add(new Person() { LastName = "Black", FirstName = "Betty", DateOfBirth = new DateTime(1971, 6, 13), FavoriteColor = "Green", Gender = Gender.Female });
 
-            string actual = Output.Format(records, OutputType.Gender);
+            string actual = Output.Format(records, SortOrder.GenderThenName);
 
             Assert.AreEqual<string>(expected, actual);
         }
@@ -248,7 +248,7 @@ namespace GR.Tests
             records.Add(new Person() { LastName = "Johnson", FirstName = "Nancy", DateOfBirth = new DateTime(1982, 7, 26), FavoriteColor = "Red", Gender = Gender.Female });
             records.Add(new Person() { LastName = "Black", FirstName = "Betty", DateOfBirth = new DateTime(1971, 6, 13), FavoriteColor = "Green", Gender = Gender.Female });
 
-            string actual = Output.Format(records, OutputType.Birthdate);
+            string actual = Output.Format(records, SortOrder.Birthdate);
 
             Assert.AreEqual<string>(expected, actual);
         }
@@ -264,7 +264,7 @@ namespace GR.Tests
             records.Add(new Person() { LastName = "Johnson", FirstName = "Nancy", DateOfBirth = new DateTime(1982, 7, 26), FavoriteColor = "Red", Gender = Gender.Female });
             records.Add(new Person() { LastName = "Black", FirstName = "Betty", DateOfBirth = new DateTime(1971, 6, 13), FavoriteColor = "Green", Gender = Gender.Female });
 
-            string actual = Output.Format(records, OutputType.Lastname);
+            string actual = Output.Format(records, SortOrder.Lastname);
 
             Assert.AreEqual<string>(expected, actual);
         }

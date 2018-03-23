@@ -17,17 +17,17 @@ namespace GR.WebAPI.Controllers
         [Route("records/{sort}")]
         public IEnumerable<Record> Get(string sort)
         {
-            OutputType outputType = OutputType.Gender;
+            SortOrder outputType = SortOrder.GenderThenName;
             switch (sort.ToLower())
             {
                 case "gender":
-                    outputType = OutputType.Gender;
+                    outputType = SortOrder.GenderThenName;
                     break;
                 case "birthdate":
-                    outputType = OutputType.Birthdate;
+                    outputType = SortOrder.Birthdate;
                     break;
                 case "name":
-                    outputType = OutputType.Lastname;
+                    outputType = SortOrder.Lastname;
                     break;
             }
             List<Record> people = new List<Record>();
