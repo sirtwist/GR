@@ -8,9 +8,9 @@ namespace GR.Shared
 {
     public enum OutputType
     {
-        Gender,
-        Birthdate,
-        Lastname
+        Gender = 1,
+        Birthdate = 2,
+        Lastname = 3
     }
 
     public static class Output
@@ -28,6 +28,16 @@ namespace GR.Shared
         public static string Format(IEnumerable<Record> original, OutputType outputType)
         {
             StringBuilder output = new StringBuilder();
+            List<Record> sorted = Sort(original, outputType);
+            sorted.ForEach(x =>
+            {
+                output.AppendLine(x.ToString());
+            });
+            return output.ToString();
+        }
+
+        public static List<Record> Sort(IEnumerable<Record> original, OutputType outputType)
+        {
             List<Record> sorted = new List<Record>();
             switch (outputType)
             {
@@ -41,11 +51,7 @@ namespace GR.Shared
                     sorted = original.OrderByDescending(x => x.LastName).ToList();
                     break;
             }
-            sorted.ForEach(x =>
-            {
-                output.AppendLine(x.ToString());
-            });
-            return output.ToString();
+            return sorted;
         }
 
     }
