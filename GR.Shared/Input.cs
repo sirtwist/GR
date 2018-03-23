@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace GR.Shared
 {
-    public class Input
+    public static class Input
     {
         /// <summary>
         /// Parses a line of text to convert to a Person object. Three seperator formats are supported (" | ", ", ", " ")
         /// </summary>
         /// <param name="Input">line of text to parse</param>
         /// <returns>Person object parsed from input</returns>
-        public static Person ParseLine(string Input)
+        public static Record ParseLine(this RecordFactory Factory, string Input)
         {
             // Attempt to split pipe delimited
             string[] pipes = Input.Split(new string[] { " | " }, StringSplitOptions.RemoveEmptyEntries);
             if (pipes.Count() == 5)
             {
-                return Person.GetPerson(pipes);
+                return Factory.GetRecord(pipes);
             }
             else
             {
@@ -27,7 +27,7 @@ namespace GR.Shared
                 string[] commas = Input.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
                 if (commas.Count() == 5)
                 {
-                    return Person.GetPerson(commas);
+                    return Factory.GetRecord(commas);
                 }
                 else
                 {
@@ -35,7 +35,7 @@ namespace GR.Shared
                     string[] spaces = Input.Split(' ');
                     if (spaces.Count() == 5)
                     {
-                        return Person.GetPerson(spaces);
+                        return Factory.GetRecord(spaces);
                     }
                     else
                     {
