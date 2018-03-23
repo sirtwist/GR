@@ -14,7 +14,7 @@ namespace GR.Console
         [Option('r', "read", Required = true, HelpText = "Input file to process")]
         public string FilePath { get; set; }
 
-        [Option('s', "output", Required = true, HelpText = "Output sort type (1 - gender, 2 - birth date, 3 - last name)")]
+        [Option('s', "sort", Required = true, HelpText = "Output sort type (1 - gender, 2 - birth date, 3 - last name)")]
         public int OutputType { get; set; }
     }
 
