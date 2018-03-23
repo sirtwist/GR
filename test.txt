@@ -1,0 +1,7 @@
+Roberts | George | Male | Purple | 1973-04-11
+White | Shawna | Female | Blue | 1964-03-13
+White, Jeff, Male, Gray, 1981-01-01
+Smith, John, Male, Black, 1982-03-14
+Arnold Kim Female Green 1977-08-23
+Black Lisa Female Yellow 1974-09-03
+Harper | Lee | Male | Pink | 1988-03-17
