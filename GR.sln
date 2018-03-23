@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GR.Tests", "GR.Tests\GR.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GR.Shared", "GR.Shared\GR.Shared.csproj", "{F450B31A-E778-40DA-BF86-A0FA5F62D39B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GR.WebAPI", "GR.WebAPI\GR.WebAPI.csproj", "{264F9675-DA14-4CD3-9BF5-61EEA600D0BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F450B31A-E778-40DA-BF86-A0FA5F62D39B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F450B31A-E778-40DA-BF86-A0FA5F62D39B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F450B31A-E778-40DA-BF86-A0FA5F62D39B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{264F9675-DA14-4CD3-9BF5-61EEA600D0BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{264F9675-DA14-4CD3-9BF5-61EEA600D0BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{264F9675-DA14-4CD3-9BF5-61EEA600D0BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{264F9675-DA14-4CD3-9BF5-61EEA600D0BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
