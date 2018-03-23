@@ -205,7 +205,7 @@ namespace GR.Tests
         [TestMethod]
         public void Output_TestTypeCorrect()
         {
-            int input = 1;
+            int input = 2;
             OutputType expected = OutputType.Birthdate;
 
             var actual = Output.GetOutputType(input);
