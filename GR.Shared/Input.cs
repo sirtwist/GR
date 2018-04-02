@@ -15,35 +15,19 @@ namespace GR.Shared
         /// <returns>Person object parsed from input</returns>
         public static Record ParseLine(this RecordFactory Factory, string Input)
         {
-            // Attempt to split pipe delimited
-            string[] pipes = Input.Split(new string[] { " | " }, StringSplitOptions.RemoveEmptyEntries);
-            if (pipes.Count() == 5)
+            string[] delimiters = new string[] { " | ", ", ", " " };
+
+            foreach (var delimiter in delimiters)
             {
-                return Factory.GetRecord(pipes);
-            }
-            else
-            {
-                // Attempt to split comma delimited
-                string[] commas = Input.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
-                if (commas.Count() == 5)
+                string[] elements = Input.Split(new string[] { delimiter }, StringSplitOptions.RemoveEmptyEntries);
+                if (elements.Count() == 5)
                 {
-                    return Factory.GetRecord(commas);
-                }
-                else
-                {
-                    // Attempt to split space delimited
-                    string[] spaces = Input.Split(' ');
-                    if (spaces.Count() == 5)
-                    {
-                        return Factory.GetRecord(spaces);
-                    }
-                    else
-                    {
-                        // Unable to determine delimiter format
-                        throw new FormatException("Unable to determine line format; split did not return 5 elements");
-                    }
+                    return Factory.GetRecord(elements);
                 }
             }
+
+            // Unable to determine delimiter format
+            throw new FormatException("Unable to determine line format; split did not return 5 elements");
         }
     }
 }
